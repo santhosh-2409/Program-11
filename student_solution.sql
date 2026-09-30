@@ -1,40 +1,50 @@
+USE CollegeDB;
+
 CREATE TABLE Student (
-    StudentID INT PRIMARY KEY,
-    StudentName VARCHAR(20),
+    StudentID INT,
+    StudentName VARCHAR(50),
     DepartmentID INT
 );
 
-INSERT INTO Student VALUES (1001, 'Arun', 10);
-INSERT INTO Student VALUES (1002, 'Priya', 20);
-INSERT INTO Student VALUES (1003, 'Kumar', 10);
+INSERT INTO Student (StudentID, StudentName, DepartmentID)
+VALUES
+(1001, 'Arun', 10),
+(1002, 'Priya', 20),
+(1003, 'Kumar', 10);
 
 CREATE TABLE Department (
-    DepartmentID INT PRIMARY KEY,
+    DepartmentID INT,
     DepartmentName VARCHAR(50)
 );
 
-INSERT INTO Department VALUES (10, 'Computer Science');
-INSERT INTO Department VALUES (20, 'Mathematics');
+INSERT INTO Department (DepartmentID, DepartmentName)
+VALUES
+(10, 'Computer Science'),
+(20, 'Mathematics');
 
 CREATE TABLE Course (
-    CourseID INT PRIMARY KEY,
+    CourseID INT,
     CourseName VARCHAR(50)
 );
 
-INSERT INTO Course VALUES (201, 'Database Systems');
-INSERT INTO Course VALUES (202, 'Data Structures');
-INSERT INTO Course VALUES (203, 'Mathematics');
+INSERT INTO Course (CourseID, CourseName)
+VALUES
+(201, 'Database Systems'),
+(202, 'Data Structures'),
+(203, 'Mathematics');
 
 CREATE TABLE Enrollment (
-    EnrollmentID INT PRIMARY KEY,
+    EnrollmentID INT,
     StudentID INT,
     CourseID INT
 );
 
-INSERT INTO Enrollment VALUES (1, 1001, 201);
-INSERT INTO Enrollment VALUES (2, 1001, 202);
-INSERT INTO Enrollment VALUES (3, 1002, 203);
-INSERT INTO Enrollment VALUES (4, 1003, 201);
+INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
+VALUES
+(1, 1001, 201),
+(2, 1001, 202),
+(3, 1002, 203),
+(4, 1003, 201);
 
 CREATE VIEW StudentDetails AS
 SELECT
